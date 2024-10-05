@@ -1,5 +1,10 @@
+#include <unistd.h>
 void ft_is_negative(int n);
-void ft_putchar(void);
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int    main() {
     char test_pos1[] = "5 = ";
@@ -9,7 +14,7 @@ int    main() {
         n++;
     }
     ft_is_negative(5);
-    ft_is_negative('\n');
+    ft_putchar('\n');
 
     char test_pos2[] = "-2 = ";
     n = 0;
@@ -18,7 +23,7 @@ int    main() {
         n++;
     }
     ft_is_negative(-2);
-    ft_is_negative('\n');
+    ft_putchar('\n');
 
     char test_pos3[] = "0 = ";
     n = 0;
@@ -27,7 +32,7 @@ int    main() {
         n++;
     }
     ft_is_negative(0);
-    ft_is_negative('\n');
+    ft_putchar('\n');
 
     return 0;
 }
